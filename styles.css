@@ -122,4 +122,61 @@ body {
   font-size: 1rem;
   font-weight: var(--font-weight-medium);
   color: var(--color-light-lavender);
+  line-height: normal;
+  background: var(--color-white);
+}
+
+/* || Results summary component styles */
+.result {
+  padding: 1.5rem 3.625rem 2.5rem;
+  background: linear-gradient(
+    var(--color-light-slate-blue),
+    var(--color-light-royal-blue)
+  );
+  border-radius: 0 0 2rem 2rem;
+  box-shadow: 0 1.875rem 3.75rem rgb(61 108 236 / 0.15);
+  text-align: center;
+}
+
+.result > * + * {
+  margin-top: var(--flow-space, 1.5rem);
+}
+
+.result__heading {
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.result__score-container {
+  width: 8.75rem;
+  margin-inline: auto;
+  padding: 1.5625rem 2.375rem 1.375rem;
+  background: linear-gradient(
+    var(--color-violet-blue),
+    var(--color-persian-blue)
+  );
+  border-radius: 50%;
+}
+
+.result__points {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: var(--font-weight-extra-bold);
+  line-height: 1.286;
+  color: var(--color-white);
+}
+
+.result__total {
+  font-weight: var(--font-weight-bold);
+  opacity: 0.52;
+}
+
+.result__description {
+  --flow-space: 0.5rem;
+}
+
+.result__subheading {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
 }
