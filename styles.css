@@ -110,6 +110,14 @@ select {
   --color-pale-blue: hsl(221 100% 96%);
   --color-light-lavender: hsl(241 100% 89%);
   --color-gray-blue: hsl(224 30% 27%);
+  --gradient-slate-blue-to-royal-blue: linear-gradient(
+    var(--color-light-slate-blue),
+    var(--color-light-royal-blue)
+  );
+  --gradient-violet-blue-to-persian-blue: linear-gradient(
+    var(--color-violet-blue),
+    var(--color-persian-blue)
+  );
   --font-family-primary: "Hanken Grotesk", sans-serif;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
@@ -136,34 +144,37 @@ body {
   border-radius: 2rem;
 }
 
-.result {
+.results-summary__section > * + * {
+  margin-top: var(--flow-space, 1.5rem);
+}
+
+.results-summary__section--result {
   padding: 1.5rem 3.625rem 2.5rem;
-  background: linear-gradient(
-    var(--color-light-slate-blue),
-    var(--color-light-royal-blue)
-  );
+  background: var(--gradient-slate-blue-to-royal-blue);
   border-radius: 0 0 2rem 2rem;
   box-shadow: 0 1.875rem 3.75rem rgb(61 108 236 / 0.15);
   text-align: center;
 }
 
-.result > * + * {
-  margin-top: var(--flow-space, 1.5rem);
-}
-
-.result__heading {
+.results-summary__heading {
   font-size: 1.125rem;
   font-weight: var(--font-weight-bold);
+}
+
+.results-summary__heading--large {
+  font-size: 1.5rem;
+  color: var(--color-white);
+}
+
+.results-summary__heading--blue {
+  color: var(--color-gray-blue);
 }
 
 .result__score-container {
   width: 8.75rem;
   margin-inline: auto;
   padding: 1.5625rem 2.375rem 1.375rem;
-  background: linear-gradient(
-    var(--color-violet-blue),
-    var(--color-persian-blue)
-  );
+  background: var(--gradient-violet-blue-to-persian-blue);
   border-radius: 50%;
 }
 
@@ -184,24 +195,8 @@ body {
   --flow-space: 0.5rem;
 }
 
-.result__subheading {
-  font-size: 1.5rem;
-  font-weight: var(--font-weight-bold);
-  color: var(--color-white);
-}
-
-.summary {
+.results-summary__section--summary {
   padding: 1.5rem 1.875rem 1.875rem;
-}
-
-.summary > * + * {
-  margin-top: var(--flow-space, 1.5rem);
-}
-
-.summary__heading {
-  font-size: 1.125rem;
-  font-weight: var(--font-weight-bold);
-  color: var(--color-gray-blue);
 }
 
 .summary__button {
@@ -285,8 +280,5 @@ body {
 }
 
 .summary__button:hover {
-  background: linear-gradient(
-    var(--color-light-slate-blue),
-    var(--color-light-royal-blue)
-  );
+  background: var(--gradient-slate-blue-to-royal-blue);
 }
